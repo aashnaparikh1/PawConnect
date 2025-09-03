@@ -16,8 +16,8 @@ const DemoAPI2 = () => {
   return (
     <div>
       {facts.map((fact, index) => (
-        <div key={index}>
-          <p>{fact}</p>
+        <div key={index} className='border m-2'>
+          <p className='m-4'>{fact}</p>
         </div>
       ))}
     </div>
