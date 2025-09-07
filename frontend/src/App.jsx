@@ -1,9 +1,10 @@
-import DemoAPI2 from "./DemoAPI2";
+import NavBar from "./components/NavBar";
 
 export default function App() {
   return (
     <>
-      <DemoAPI2 />
+    <NavBar />
+    
     </>
   );
 }

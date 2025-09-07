@@ -1,27 +1,27 @@
 export default function NavBar() {
   return (
-    <div className="flex gap-8 justify-between">
+    <div className="flex gap-8 justify-between px-9 py-6">
       <div className="text-align:left font-bold text-2xl">
-        <h1>PawConnect</h1>
+        <h1><a href="">PawConnect</a></h1>
       </div>
-      <div className=" flex justify-end gap-5 items-center">
+      <div className=" flex justify-end gap-8 items-center text-sm">
         <div className="">
-          <p>About</p>
+          <a href="">About</a>
         </div>
         <div className="">
-          <p>Adoption</p>
+          <a href="">Adoption</a>
         </div>
         <div className="">
-          <p>Care</p>
+          <a href="">Care</a>
         </div>
         <div className="">
-          <p>Community</p>
+          <a href="">Community</a>
         </div>
         <div className="">
-          <p>Adopt</p>
+          <button className="border p-3 rounded-xl bg-blue-400">Adopt</button>
         </div>
         <div className="">
-          <p>Login</p>
+          <button className="border p-3 rounded-xl bg-gray-200">Login</button>
         </div>
       </div>
     </div>
