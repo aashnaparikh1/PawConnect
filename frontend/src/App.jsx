@@ -1,6 +1,7 @@
 import NavBar from "./components/NavBar";
 import LoginPage from "./pages/LoginPage";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import SeePets from "./pages/SeePets";
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <NavBar />
       <Routes>
         <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/pets" element={<SeePets />}></Route>
       </Routes>
       </BrowserRouter>
     </>
