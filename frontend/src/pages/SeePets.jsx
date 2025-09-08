@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import AddAnimal from '../components/AddAnimals';
 
 const SeePets = () => {
-  const [addAnimal, setAddAnimal] = useState(true);
+  const [addAnimal, setAddAnimal] = useState(false);
   const [pets, setPets] = useState([]);
 
   useEffect(() => {
