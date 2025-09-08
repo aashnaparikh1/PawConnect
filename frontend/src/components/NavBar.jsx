@@ -1,4 +1,5 @@
-import {  Link } from "react-router-dom";
+import {Link}  from "react-router-dom";
+
 
 export default function NavBar() {
   return (
@@ -23,7 +24,8 @@ export default function NavBar() {
           <button className="border p-3 rounded-xl bg-blue-400">Adopt</button>
         </div>
         <div className="">
-          <Link to="/login"><button className="border p-3 rounded-xl bg-gray-200">Login</button></Link>
+            <Link to="/login"><button className="border p-3 rounded-xl bg-gray-200">Login</button></Link>
+
         </div>
       </div>
     </div>
