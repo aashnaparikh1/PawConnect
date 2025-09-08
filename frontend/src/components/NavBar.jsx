@@ -1,3 +1,5 @@
+import {  Link } from "react-router-dom";
+
 export default function NavBar() {
   return (
     <div className="flex gap-8 justify-between px-9 py-6">
@@ -21,7 +23,7 @@ export default function NavBar() {
           <button className="border p-3 rounded-xl bg-blue-400">Adopt</button>
         </div>
         <div className="">
-          <button className="border p-3 rounded-xl bg-gray-200">Login</button>
+          <Link to="/login"><button className="border p-3 rounded-xl bg-gray-200">Login</button></Link>
         </div>
       </div>
     </div>
