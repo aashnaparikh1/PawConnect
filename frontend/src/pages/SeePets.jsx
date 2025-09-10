@@ -12,11 +12,11 @@ const SeePets = () => {
         if (!response.ok){
           throw new Error('Failed to fetch pets');
         }
-        const data = response.json();
+        const data = await response.json();
         setPets(data);
       }
       catch(err){
-        setError(err.message) 
+        console.error(err);
       }
     };
 
@@ -35,6 +35,24 @@ const SeePets = () => {
         <button className='border p-3 rounded-xl bg-blue-400' onClick={() => setAddAnimal(!addAnimal)}>Add Animal</button>
         {addAnimal && <AddAnimal />}
       </div>
+      <div>
+        
+      <ul>
+        {pets.map((item, idx) => (
+          <li key={item.id || item.name || idx}>
+            <p>Name: {item.name}</p>
+            <p>Age: {item.age}</p>
+            <p>Gender: {item.gender}</p>
+          </li>
+        ))}
+      </ul>
+
+          
+      
+
+        </div>
+
+          
     </div>
   )
 }
