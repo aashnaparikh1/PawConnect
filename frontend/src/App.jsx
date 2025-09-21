@@ -1,5 +1,7 @@
 import NavBar from "./components/NavBar";
 import LoginPage from "./pages/LoginPage";
+import LandingPage from "./pages/LandingPage";
+import AdoptionForm from "./pages/AdoptionForm";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import SeePets from "./pages/SeePets";
 import AboutPet from "./pages/AboutPet";
@@ -10,8 +12,10 @@ export default function App() {
       <BrowserRouter>
       <NavBar />
       <Routes>
+        <Route path="/" element={<LandingPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/pets" element={<SeePets />}></Route>
+        <Route path="/adoptionForm" element={<AdoptionForm />}></Route>
       </Routes>
       </BrowserRouter>
       <AboutPet/>
