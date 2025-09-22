@@ -12,14 +12,14 @@ export default function NavBar() {
           <a href="/aboutTeam">About</a>
         </div>
         <div className="">
-          <a href="">Breeds</a>
+          <a href="/breeds">Breeds</a>
         </div>
         <div className="">
-          <a href="">Pets</a>
+          <a href="/pets">Pets</a>
         </div>
-        <div className="">
+        {/* <div className="">
           <Link to="/pets">Adoption</Link>
-        </div>
+        </div> */}
         <div className="">
           <a href="">Care</a>
         </div>
