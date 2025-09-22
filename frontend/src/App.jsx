@@ -16,9 +16,10 @@ export default function App() {
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/pets" element={<SeePets />}></Route>
         <Route path="/adoptionForm" element={<AdoptionForm />}></Route>
+        <Route path = "/aboutPet" element={<AboutPet/>}></Route>
       </Routes>
       </BrowserRouter>
-      <AboutPet/>
+      {/* <AboutPet/> */}
     </>
   );
 }
