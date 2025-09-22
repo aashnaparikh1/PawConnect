@@ -12,6 +12,9 @@ export default function NavBar() {
           <a href="">About</a>
         </div>
         <div className="">
+          <a href="">Pets</a>
+        </div>
+        <div className="">
           <Link to="/pets">Adoption</Link>
         </div>
         <div className="">
