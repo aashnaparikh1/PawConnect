@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// Mock data for the featured pets and success stories
+
 const featuredPets = [
   { id: 1, name: 'Buddy', breed: 'Golden Retriever', age: '2 years', image: 'https://placehold.co/400x300/e0f2fe/1d4ed8?text=Buddy', description: 'A playful and friendly companion looking for a forever home.' },
   { id: 2, name: 'Mittens', breed: 'Siamese', age: '1 year', image: 'https://placehold.co/400x300/e0f2fe/1d4ed8?text=Mittens', description: 'A sweet and calm cat who loves to curl up on a warm lap.' },
@@ -14,13 +14,13 @@ const successStories = [
   { id: 3, name: 'The Millers & Daisy', story: 'We were looking for a companion for our kids, and Daisy was the perfect fit. She is so gentle and loves cuddles.', image: 'https://placehold.co/100x100/e0f2fe/1d4ed8?text=M' },
 ];
 
-// Main App component
+
 const LandingPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // In a real app, this would trigger a search API call
+  
     console.log('Searching for:', searchTerm);
   };
 
@@ -35,7 +35,7 @@ const LandingPage = () => {
         }
       `}</style>
       
-      {/* Hero Section */}
+      
       <header className="relative bg-blue-500 text-white py-12 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-800 opacity-90"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -46,7 +46,7 @@ const LandingPage = () => {
             Find your perfect companion.
           </p>
 
-          {/* Search Bar */}
+          
           <form onSubmit={handleSearch} className="max-w-xl mx-auto flex items-center bg-white rounded-full shadow-xl p-2">
             <input
               type="text"
@@ -64,7 +64,7 @@ const LandingPage = () => {
 
       <main className="container mx-auto px-4 py-12 md:py-16">
         
-        {/* Featured Animals Section */}
+        
         <section className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Featured Pets</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -86,7 +86,7 @@ const LandingPage = () => {
 
         <hr className="border-t-2 border-blue-200 my-12" />
 
-        {/* Success Stories Section */}
+        
         <section>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Happy Tails: Success Stories</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -105,7 +105,7 @@ const LandingPage = () => {
         </section>
       </main>
 
-      {/* Footer */}
+      ̀
       <footer className="bg-gray-800 text-white text-center py-6 mt-12">
         <p>&copy; {new Date().getFullYear()} Pawsitive Adoptions. All rights reserved.</p>
       </footer>

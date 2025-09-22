@@ -1,6 +1,7 @@
 import React from 'react';
 
-const AboutPet = () => {
+
+const AboutPet = ({name,age,breed,gender}) => {
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col items-center py-10 px-2 font-sans">
       <div className="max-w-2xl w-full bg-white rounded-xl shadow-lg px-8 py-8">
@@ -13,10 +14,10 @@ const AboutPet = () => {
           />
         </div>
         
-        <h1 className="text-3xl font-semibold mb-2 text-gray-800">Buddy</h1>
+        <h1 className="text-3xl font-semibold mb-2 text-gray-800">{name}</h1>
         
         <div className="text-gray-500 font-medium mb-5">
-          Golden Retriever | Male | 2 years old
+          {breed} | {gender} | {age}
         </div>
         
         <p className="mb-7 text-gray-700">
