@@ -1,79 +1,77 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const AddAnimal = () => {
+const AddAnimal = ({ onAnimalAdded }) => {
   const [name, setName] = useState('');
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState('');
   const [gender, setGender] = useState('');
+  const navigate = useNavigate();
 
-  const addAnimal = async() => {
-    const dog = {name, age, gender};
-    try{
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log('Adding new animal:', { name, age, gender });
+    
+    const newDog = { name, age: parseInt(age), gender };
+
+    try {
       const response = await fetch('http://localhost:3000/dogs', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(dog)
+        body: JSON.stringify(newDog),
       });
-      if(response.ok){
-        const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error('Failed to add animal');
       }
+
       
-    }
-    catch(err){
-      setErrorMessage(err.message)
-    }
-  }
+      onAnimalAdded();
+      
+      setName('');
+      setAge('');
+      setGender('');
 
-  const handleClick = () => {
-    addAnimal();
-
-  }
+    } catch (error) {
+      console.error('Error adding animal:', error);
+    }
+  };
 
   return (
-    <div className='fixed inset-0 bg-black bg-opacity-50 flex flex-col gap-8 justify-center items-center z-50'>
-      <div className='bg-white p-6 rounded-lg w-96'>
-        <div>
-          <h2 className='text-2xl font-semibold mb-4 text-center'>Add New Animal</h2>
-        </div>
-
-        <div className='flex flex-col gap-2'>
-          <p>Name</p>
-          <input
-            type="text"
-            placeholder='Enter name'
-            className='border border-gray-300 rounded-lg p-3 w-80 mb-4'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <p>Age</p>
-          <input 
-            type = "number"
-            placeholder = 'Enter Age' 
-            className='border border-gray-300 rounded-lg p-3 w-80 mb-4'
-            value = {age}
-            onChange={(e)=> setAge(e.target.value)}
-          />
-        </div>
-
-        <div className="flex flex-col gap-2">
-         <p>Gender</p>
-         <select className='border border-gray-300 rounded-lg p-4 w-80 mb-4' onChange={(e)=> setGender(e.target.value)}>
-          <option value="">Select</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-         </select>
-        </div>
-
-        <button className='bg-blue-500 text-white rounded-lg p-3 w-80 hover:bg-blue-600 transition duration-300' onClick={addAnimal}>Add Animal</button>
-      </div>
-
-      
+    <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md mx-auto mt-8 border border-gray-200">
+      <h3 className="text-2xl font-bold text-center text-blue-600 mb-6">Add New Animal</h3>
+      <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Name"
+          className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+        />
+        <input
+          type="number"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+          placeholder="Age"
+          className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+        />
+        <input
+          type="text"
+          value={gender}
+          onChange={(e) => setGender(e.target.value)}
+          placeholder="Gender"
+          className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+        />
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white font-semibold py-3 rounded-full hover:bg-blue-700 transition-colors duration-200"
+        >
+          Add Animal
+        </button>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default AddAnimal
+export default AddAnimal;
