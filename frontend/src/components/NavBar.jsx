@@ -9,7 +9,7 @@ export default function NavBar() {
       </div>
       <div className=" flex justify-end gap-8 items-center text-sm">
         <div className="">
-          <a href="">About</a>
+          <a href="/aboutTeam">About</a>
         </div>
         <div className="">
           <a href="">Pets</a>
