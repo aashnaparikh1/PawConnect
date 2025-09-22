@@ -9,7 +9,7 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
 
-let dogs = [{name: 'Buddy', age: 3, gender: 'male'}]
+let dogs = [{name: 'Buddy', age: 3, gender: 'male'}, {name: 'Mac', age: 1, gender: 'male'}]
 
 app.post('/dogs', (req, res) => {
   const newDog = req.body;
