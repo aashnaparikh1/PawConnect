@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// Validation functions
+
 const validateStep1 = (data) => {
   const errors = {};
   
