@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express')
 const cors = require('cors');
 const { connectDB } = require('./db/connection.js');
 const dogRouter = require('./dog');

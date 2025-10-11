@@ -1,6 +1,6 @@
-import dotenv from 'dotenv';
+const dotenv = require('dotenv')
 dotenv.config();
-import { MongoClient, ServerApiVersion } from 'mongodb';
+const { MongoClient, ServerApiVersion } = require('mongodb');
 
 
 
@@ -17,7 +17,7 @@ const client = new MongoClient(uri, {
 
 let db;
 
-export const connectDB = async () => {
+const connectDB = async () => {
   try {
     await client.connect();
     await client.db("admin").command({ ping: 1 });
@@ -30,16 +30,18 @@ export const connectDB = async () => {
   }
 };
 
-export const getDB = () => {
+const getDB = () => {
   if (!db) {
     throw new Error('Database not connected. Call connectDB() first.');
   }
   return db;
 };
 
-export const closeDB = async () => {
+const closeDB = async () => {
   if (client) {
     await client.close();
     console.log("MongoDB connection closed.");
   }
 };
+
+module.exports = {connectDB, getDB, closeDB}
