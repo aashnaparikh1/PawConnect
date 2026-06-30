@@ -16,11 +16,11 @@ const validateStep1 = (data) => {
     errors.lastName = 'Last name must be at least 2 characters';
   }
   
-  const phoneRegex = /^[+]?[\d\s\-\(\)]{10,15}$/;
+  const phoneRegex = /^[+]?[\d\s\-\(\)]{10}$/;
   if (!data.phoneNumber.trim()) {
     errors.phoneNumber = 'Phone number is required';
   } else if (!phoneRegex.test(data.phoneNumber.trim())) {
-    errors.phoneNumber = 'Please enter a valid phone number (10-15 digits)';
+    errors.phoneNumber = 'Please enter a valid phone number (10 digits)';
   }
   
   return errors;

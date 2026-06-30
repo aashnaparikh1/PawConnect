@@ -349,7 +349,7 @@ const PetProfileDetail = () => {
                             )}
                             {log.details.cost && (
                               <span className="bg-white px-3 py-1 rounded-full">
-                                Cost: ${log.details.cost}
+                                Cost: ₹{log.details.cost}
                               </span>
                             )}
                           </div>

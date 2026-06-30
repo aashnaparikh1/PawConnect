@@ -15,7 +15,7 @@ const animalSchema = new mongoose.Schema(
     age: {
       type: Number,
       required: true,
-      min: 1,
+      min: 0,
     },
     breed: {
       type: String,
@@ -25,6 +25,41 @@ const animalSchema = new mongoose.Schema(
     gender: {
       type: String,
       required: true,
+    },
+    size: {
+      type: String,
+      enum: ['Small', 'Medium', 'Large'],
+    },
+    color: {
+      type: String,
+    },
+    description: {
+      type: String,
+    },
+    temperament: [{
+      type: String,
+    }],
+    medicalHistory: {
+      vaccinated: { type: Boolean, default: false },
+      neutered: { type: Boolean, default: false },
+      healthIssues: { type: String },
+    },
+    location: {
+      shelter: String,
+      city: String,
+      state: String,
+    },
+    adoptionFee: {
+      type: Number,
+      default: 0,
+    },
+    adoptionStatus: {
+      type: String,
+      enum: ['Available', 'Pending', 'Adopted'],
+      default: 'Available',
+    },
+    image: {
+      type: String,
     },
   },
   { timestamps: true }

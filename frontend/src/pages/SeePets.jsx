@@ -15,9 +15,11 @@ const SeePets = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
+  const searchTerm = searchParams.get('search') || '';
+
   useEffect(() => {
     fetchPets();
-  }, [filters]);
+  }, [filters, searchTerm]);
 
   const fetchPets = async () => {
     try {
@@ -26,9 +28,8 @@ const SeePets = () => {
       Object.keys(filters).forEach(key => {
         if (filters[key]) queryParams.append(key, filters[key]);
       });
-      
-      const searchTerm = searchParams.get('search');
-      if (searchTerm) queryParams.append('breed', searchTerm);
+
+      if (searchTerm) queryParams.append('search', searchTerm);
 
       const response = await fetch(`http://localhost:3000/api/animals?${queryParams}`);
       const data = await response.json();
@@ -188,7 +189,7 @@ const SeePets = () => {
                   <p className="text-gray-700 text-sm mb-4 line-clamp-2">{pet.description}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-primary-600 font-bold text-lg">
-                      ${pet.adoptionFee || 'Free'}
+                      {pet.adoptionFee ? `₹${pet.adoptionFee}` : 'Free'}
                     </span>
                     <button className="bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold py-2 px-4 rounded-full hover:from-primary-600 hover:to-primary-700 transition">
                       View Details

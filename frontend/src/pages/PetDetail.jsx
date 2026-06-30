@@ -184,7 +184,7 @@ const PetDetail = () => {
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-primary-700 mb-3">Adoption Fee</h3>
                 <p className="text-3xl font-bold text-accent-600">
-                  ${pet.adoptionFee || 'Free'}
+                  {pet.adoptionFee ? `₹${pet.adoptionFee}` : 'Free'}
                 </p>
               </div>
 

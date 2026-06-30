@@ -246,7 +246,7 @@ const AddHealthLog = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Cost ($)</label>
+                  <label className="block text-gray-700 font-semibold mb-2">Cost (₹)</label>
                   <input
                     type="number"
                     name="cost"

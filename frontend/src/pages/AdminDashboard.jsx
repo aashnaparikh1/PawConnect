@@ -396,7 +396,7 @@ const AddPetForm = ({ onSuccess }) => {
         <input
           type="number"
           name="adoptionFee"
-          placeholder="Adoption Fee ($)"
+          placeholder="Adoption Fee (₹)"
           value={formData.adoptionFee}
           onChange={handleChange}
           min="0"
